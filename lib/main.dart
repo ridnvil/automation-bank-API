@@ -64,9 +64,10 @@ class _HomePageState extends State<HomePage>
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text(widget.title, style: TextStyle(color: Colors.black),),
+        title: Text(widget.title, style: TextStyle(color: Colors.black, fontSize: 30),),
       ),
       body: SafeArea(
         child: ListView(

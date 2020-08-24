@@ -1,4 +1,6 @@
+import 'package:automationdoc/component/html_code.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class BannerDocument extends StatefulWidget {
   final int banner;
@@ -30,16 +32,17 @@ class _BannerDocumentState extends State<BannerDocument>
     return TextStyle(fontSize: fontsize, fontWeight: fontWeight);
   }
 
-  
-
   Widget show(){
     if(widget.banner == 0){
       return Container(
+        padding: EdgeInsets.only(right: 400),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("This API for Bank", style: textStyle(20, null),),
-            
+            SizedBox(height: 5,),
+            Html(
+              data: MyHtmlCode().transfer(),
+            ),
           ],
         ),
       );
@@ -48,7 +51,10 @@ class _BannerDocumentState extends State<BannerDocument>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Mutasi"),
+            SizedBox(height: 5,),
+            Html(
+              data: MyHtmlCode().mutasi(),
+            ),
           ],
         ),
       );
@@ -58,6 +64,7 @@ class _BannerDocumentState extends State<BannerDocument>
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 10,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: show(),
