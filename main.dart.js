@@ -32324,7 +32324,7 @@ ba:function(){var s=this.de$
 if(s!=null)s.sez(0,!U.dV(this.c))
 this.c5()}}
 F.Cn.prototype={
-M:function(a,b){return new S.tV(new F.tj("Automation Bank Documentations",null),"Flutter Demo",X.adV(null,C.kv,X.amw()),!1,null)}}
+M:function(a,b){return new S.tV(new F.tj("Automation Bank Documentations",null),"Automation Documentations",X.adV(null,C.kv,X.amw()),!1,null)}}
 F.tj.prototype={
 aw:function(){return new F.Iv(H.b([],t.nb),H.b([],t.mV),null,C.l)}}
 F.Iv.prototype={
