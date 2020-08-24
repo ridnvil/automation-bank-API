@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage>
             SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.only(left: 100, right: 100),
-              child: Text("How to use!", style: TextStyle(fontSize: 30),),
+              child: Text("How to use! (Local Only)", style: TextStyle(fontSize: 30),),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 100, right: 100),
