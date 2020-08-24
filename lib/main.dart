@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage>
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
-        title: Text(widget.title, style: TextStyle(color: Colors.black, fontSize: 30),),
+        title: Text(widget.title, style: TextStyle(color: Colors.black, fontSize: MediaQuery.of(context).size.width <= 500 ? 15:30),),
       ),
       body: SafeArea(
         child: ListView(
