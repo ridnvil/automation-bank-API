@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Automation Bank Documentations',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -74,31 +74,41 @@ class _HomePageState extends State<HomePage>
           children: [
             SizedBox(height: 20,),
             Padding(
-              padding: const EdgeInsets.only(left: 100, right: 100),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Container(
                 width: MediaQuery.of(context).size.width / 2,
-                child: Row(
-                  children: articles.map((article) {
-                    return InkWell(
-                      child: CardArticles(articles: article,),
-                      onTap: (){
-                        print(article);
-                        setState(() {
-                          showindex = articles.indexOf(article);
-                        });
-                      },
-                    );
-                  }).toList(),
+                height: MediaQuery.of(context).size.height <= 568 || MediaQuery.of(context).size.height <= 736 ? 
+                        MediaQuery.of(context).size.height / 5: 
+                        MediaQuery.of(context).size.height / 7,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: articles.map((article) {
+                        return InkWell(
+                          child: CardArticles(articles: article,),
+                          onTap: (){
+                            print(article);
+                            setState(() {
+                              showindex = articles.indexOf(article);
+                            });
+                          },
+                        );
+                      }).toList(),
+                    ),
+                  ],
                 ),
               ),
             ),
             SizedBox(height: 10,),
             Padding(
-              padding: const EdgeInsets.only(left: 100, right: 100),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: Text("How to use! (Local Only)", style: TextStyle(fontSize: 30),),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 100, right: 100),
+              padding: const EdgeInsets.only(left: 20, right: 20),
               child: showbanner(),
             ),
           ],

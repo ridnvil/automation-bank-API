@@ -35,7 +35,7 @@ class _BannerDocumentState extends State<BannerDocument>
   Widget show(){
     if(widget.banner == 0){
       return Container(
-        padding: EdgeInsets.only(right: 400),
+        padding: EdgeInsets.only(right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

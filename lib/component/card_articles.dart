@@ -37,10 +37,10 @@ class _CardArticlesState extends State<CardArticles>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(articles.title, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
-            Text("Last updated ${articles.date}", style: TextStyle(fontSize: 12)),
+            Text(articles.title, style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold), overflow: TextOverflow.ellipsis),
+            Text("Last updated ${articles.date}", style: TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis,),
             SizedBox(height: 10,),
-            Text(articles.article, style: TextStyle(fontSize: 15)),
+            Text(articles.article, style: TextStyle(fontSize: 15), overflow: TextOverflow.ellipsis),
           ],
         ),
       ),
