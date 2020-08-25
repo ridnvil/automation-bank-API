@@ -118,7 +118,23 @@ class _HomePageState extends State<HomePage>
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Row(
+              child: MediaQuery.of(context).size.width >= 500 ? Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("To Access all the API please use OpenVPN, and please download OpenVPN file:", style: TextStyle(fontSize: 20),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      child: Text("Download", style: TextStyle(fontSize: 30),),
+                      onPressed: (){
+                        js.context.callMethod("open", ["https://drive.google.com/file/d/13RsN0g4r3bttswdu7UEgdfIB_Xlrdr24/view?usp=sharing"]);
+                      },
+                    ),
+                  ),
+                ],
+              ): Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
