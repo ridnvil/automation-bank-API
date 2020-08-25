@@ -156,6 +156,15 @@ class _HomePageState extends State<HomePage>
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: showbanner(),
             ),
+            SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                children: [
+                  Text("AZ Dev 2020")
+                ],
+              ),
+            )
           ],
         ),
       ),
