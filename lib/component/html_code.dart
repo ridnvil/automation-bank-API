@@ -91,4 +91,12 @@ class MyHtmlCode {
       <samp><a>/mt</a>, (ex. http://address:port/mt)</samp><br>
     """;
   }
+
+  String devices(){
+    return """
+      <h2>This API for get all devices</h2>
+      <samp>To get this please use route path with method GET:</samp><br>
+      <samp><a>/check</a>, (e.g http://address:port/check)</samp><br>
+    """;
+  }
 }

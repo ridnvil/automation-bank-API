@@ -15,6 +15,7 @@ class _BannerDocumentState extends State<BannerDocument>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
   int banner = 0;
+  String fileDownload = "https://drive.google.com/file/d/13RsN0g4r3bttswdu7UEgdfIB_Xlrdr24/view?usp=sharing";
 
   @override
   void initState() {
@@ -42,6 +43,21 @@ class _BannerDocumentState extends State<BannerDocument>
             SizedBox(height: 5,),
             Html(
               data: MyHtmlCode().transfer(),
+              onLinkTap: (url){
+                print(url);
+              },
+            ),
+          ],
+        ),
+      );
+    }else if(widget.banner == 1){
+      return Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 5,),
+            Html(
+              data: MyHtmlCode().mutasi(),
             ),
           ],
         ),
@@ -53,7 +69,7 @@ class _BannerDocumentState extends State<BannerDocument>
           children: [
             SizedBox(height: 5,),
             Html(
-              data: MyHtmlCode().mutasi(),
+              data: MyHtmlCode().devices(),
             ),
           ],
         ),

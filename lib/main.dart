@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:automationdoc/component/banner_document.dart';
 import 'package:automationdoc/component/card_articles.dart';
 import 'package:automationdoc/model/articles.dart';
 import 'package:flutter/material.dart';
+import 'dart:js' as js;
 
 void main() {
   runApp(MyApp());
@@ -43,7 +46,12 @@ class _HomePageState extends State<HomePage>
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this);
-    data = [{'title': 'Transfer', 'article': 'Transfer Documentation', 'date': '01-01-2020'}, {'title': 'Mutasi', 'article': 'Mutasi Documentation', 'date': '01-01-2020'}];
+    data = [
+      {'title': 'Transfer', 'article': 'Transfer Documentation', 'date': DateTime.now().toString()}, 
+      {'title': 'Mutasi', 'article': 'Mutasi Documentation', 'date': DateTime.now().toString()}, 
+      {'title': 'Devices', 'article': 'Devices Monitoring', 'date': DateTime.now().toString()}
+    ];
+
     data.forEach((element) {
       articles.add(Articles.fromJson(element));
     });
@@ -83,6 +91,7 @@ class _HomePageState extends State<HomePage>
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
+                    SizedBox(height: 10,),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +114,27 @@ class _HomePageState extends State<HomePage>
             SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
-              child: Text("How to use! (Local Only)", style: TextStyle(fontSize: 30),),
+              child: Text("How to use!", style: TextStyle(fontSize: 30),),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("To Access all the API please use OpenVPN, and please download OpenVPN file:", style: TextStyle(fontSize: 20),),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FlatButton(
+                      child: Text("Download", style: TextStyle(fontSize: 30),),
+                      onPressed: (){
+                        js.context.callMethod("open", ["https://drive.google.com/file/d/13RsN0g4r3bttswdu7UEgdfIB_Xlrdr24/view?usp=sharing"]);
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
