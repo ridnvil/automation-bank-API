@@ -12,8 +12,8 @@ class MyHtmlCode {
       <br>
 
       <h2>To transfer same Bank</h2>
-      <samp>How to run the automation tranfer?, to run this API you just need to send the body JSON to route path with method POST:</samp><br>
-      <samp><a>/transfer/publish</a>, (ex. http://address:port/transfer/publish)</samp><br>
+      <samp>How to run the automation tranfer?, to run this API you just need to send the body JSON to url with method POST:</samp><br>
+      <samp><a>http://192.168.1.52:9003/transfer/publish</a></samp><br>
       <samp>With data example like this: </samp><br>
       <code>
         <samp>{</samp><br>
@@ -22,7 +22,7 @@ class MyHtmlCode {
           <samp>    "mpin": "mpin",</samp><br>
           <samp>    "rekening": "account number",</samp><br>
           <samp>    "nominal": 10000,</samp><br>
-          <samp>    "password": "passord",</samp><br>
+          <samp>    "password": "password",</samp><br>
           <samp>    "udid": "devices id",</samp><br>
           <samp>    "port": 8200</samp><br>
         <samp> }</samp><br>
@@ -43,11 +43,12 @@ class MyHtmlCode {
       <br><br>
       <h2>Show all Transaction</h2><br>
       <samp>to show all transaction use route path with method GET:</samp><br>
-      <samp><a>/transfer/list</a>, (ex. http://address:port/transfer/list)</samp><br>
+      <samp><a>http://192.168.1.52:9002/transfer/list</a></samp><br>
 
       <h2>Show single transaction</h2></br>
       <samp>to show just a single transaction, use route path with method GET:</samp><br>
-      <samp><a>/tb/getone/id</a>, (ex. http://address:port/tb/getone/7459aa31-21f7-4d7d-9379-287cc92a3c43)</samp><br>
+      <samp><a>http://192.168.1.52:9002/tb/getone/uniqueid</a></samp><br>
+      <samp>ex. uniqueid = c3c5ccc8-336d-4458-9b5a-8df22e2465a6</samp><br>
     """;
   }
 
@@ -63,7 +64,7 @@ class MyHtmlCode {
 
       <h2>Run automation Mutasi</h2>
       <samp>How to run automation mutation?, to run this, send the body JSON and use route path with method POST:</samp><br>
-      <samp><a>/mutasi/publish</a>, (ex. http://address:port/mutasi/publish)</samp><br>
+      <samp><a>http://192.168.1.52:9003/mutasi/publish</a></samp><br>
       <samp>With data like this: </samp><br>
       <code>
         <samp>{</samp><br>
@@ -88,7 +89,7 @@ class MyHtmlCode {
 
       <h2>Show all transaction mutation</h2>
       <samp>to show all transaction use route path with method GET:</samp><br>
-      <samp><a>/mt</a>, (ex. http://address:port/mt)</samp><br>
+      <samp><a>http://192.168.1.52:9002/mt</a></samp><br>
     """;
   }
 
@@ -96,7 +97,7 @@ class MyHtmlCode {
     return """
       <h2>This API for get all devices</h2>
       <samp>To get this please use route path with method GET:</samp><br>
-      <samp><a>/check</a>, (e.g http://address:port/check)</samp><br>
+      <samp><a>http://192.168.1.52:8081/check</a></samp><br>
     """;
   }
 }

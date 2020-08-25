@@ -117,41 +117,135 @@ class _HomePageState extends State<HomePage>
               child: Text("How to use!", style: TextStyle(fontSize: 30),),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20, right: 20),
-              child: MediaQuery.of(context).size.width >= 500 ? Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("To Access all the API please use OpenVPN, and please download OpenVPN file:", style: TextStyle(fontSize: 20),),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FlatButton(
-                      child: Text("Download", style: TextStyle(fontSize: 30),),
-                      onPressed: (){
-                        js.context.callMethod("open", ["https://drive.google.com/file/d/13RsN0g4r3bttswdu7UEgdfIB_Xlrdr24/view?usp=sharing"]);
-                      },
-                    ),
-                  ),
-                ],
-              ): Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("To Access all the API please use OpenVPN, and please download OpenVPN file:", style: TextStyle(fontSize: 20),),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: FlatButton(
-                      child: Text("Download", style: TextStyle(fontSize: 30),),
-                      onPressed: (){
-                        js.context.callMethod("open", ["https://drive.google.com/file/d/13RsN0g4r3bttswdu7UEgdfIB_Xlrdr24/view?usp=sharing"]);
-                      },
-                    ),
-                  ),
-                ],
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Card(
+                elevation: 10,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Row(
+                          children: [
+                            Text("To Access all the API please use OpenVPN, and please download OpenVPN config file:", style: TextStyle(fontSize: 15),),
+                            FlatButton(
+                              child: Text("Download Here!", style: TextStyle(fontSize: 15, color: Colors.blue),),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://drive.google.com/file/d/13RsN0g4r3bttswdu7UEgdfIB_Xlrdr24/view?usp=sharing"]);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Text("To login on VPN the auth.txt already inside on zip file"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Row(
+                          children: [
+                            Text("For Windows User Documentation: "),
+                            FlatButton(
+                              child: Text("Read Here!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-windows/#OpenVPN_Connect_v2"]);
+                              },
+                            ),
+                            Text("For Download VPN Client Program: "),
+                            FlatButton(
+                              child: Text("Download Here!", style: TextStyle(color: Colors.blue)),
+                              onPressed: () {
+                                js.context.callMethod("open", ["https://swupdate.openvpn.org/community/releases/openvpn-install-2.4.9-I601-Win10.exe"]);
+                              },
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Row(
+                          children: [
+                            Text("For Mac User Documentation: "),
+                            FlatButton(
+                              child: Text("Read Here!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-macos/"]);
+                              },
+                            ),
+                            Text("Dowload VPN CLient Program: "),
+                            FlatButton(
+                              child: Text("Download Here!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://openvpn.net/downloads/openvpn-connect-v3-macos.dmg"]);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Row(
+                          children: [
+                            Text("For Linux User Documentation: "),
+                            FlatButton(
+                              child: Text("Read Here!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://openvpn.net/vpn-server-resources/connecting-to-access-server-with-linux/"]);
+                              },
+                            ),
+                            Text("Dowload VPN CLient Program: "),
+                            FlatButton(
+                              child: Text("Download Here!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://openvpn.net/openvpn-client-for-linux/"]);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Row(
+                          children: [
+                            Text("Use Insomnia API Client to test the API, Documentation: "),
+                            FlatButton(
+                              child: Text("Read Here!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://support.insomnia.rest/article/11-getting-started"]);
+                              },
+                            ),
+                            Text("Dowload API CLient Program: "),
+                            FlatButton(
+                              child: Text("Download for Windows!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://updates.insomnia.rest/downloads/windows/latest?ref=https%3A%2F%2Fwww.google.com%2F&app=com.insomnia.app"]);
+                              },
+                            ),
+                            FlatButton(
+                              child: Text("Download for Linux!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://updates.insomnia.rest/downloads/ubuntu/latest?ref=https%3A%2F%2Fwww.google.com%2F&app=com.insomnia.app"]);
+                              },
+                            ),
+                            FlatButton(
+                              child: Text("Download for Mac!", style: TextStyle(color: Colors.blue)),
+                              onPressed: (){
+                                js.context.callMethod("open", ["https://updates.insomnia.rest/downloads/mac/latest?ref=https%3A%2F%2Fwww.google.com%2F&app=com.insomnia.app"]);
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10,)
+                    ],
+                  )
+                ),
               ),
             ),
+            SizedBox(height: 5,),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
               child: showbanner(),

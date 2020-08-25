@@ -1,6 +1,8 @@
 import 'package:automationdoc/component/html_code.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'dart:js' as js;
+
 
 class BannerDocument extends StatefulWidget {
   final int banner;
@@ -43,10 +45,11 @@ class _BannerDocumentState extends State<BannerDocument>
             SizedBox(height: 5,),
             Html(
               data: MyHtmlCode().transfer(),
-              onLinkTap: (url){
-                print(url);
-              },
+              // onLinkTap: (url){
+              //   js.context.callMethod("open", ["http://192.168.1.52:9002/transfer/list"]);
+              // },
             ),
+            Image.asset("assets/img/transfer_response.jpeg")
           ],
         ),
       );
@@ -58,6 +61,9 @@ class _BannerDocumentState extends State<BannerDocument>
             SizedBox(height: 5,),
             Html(
               data: MyHtmlCode().mutasi(),
+              // onLinkTap: (url){
+              //   js.context.callMethod("open", [url]);
+              // },
             ),
           ],
         ),
@@ -70,6 +76,9 @@ class _BannerDocumentState extends State<BannerDocument>
             SizedBox(height: 5,),
             Html(
               data: MyHtmlCode().devices(),
+              // onLinkTap: (url){
+              //   js.context.callMethod("open", ["http://192.168.1.52:8081/check"]);
+              // },
             ),
           ],
         ),

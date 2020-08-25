@@ -20,5 +20,6 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-
+  assets:
+    - assets/img/transfer_response.jpeg
   uses-material-design: true
